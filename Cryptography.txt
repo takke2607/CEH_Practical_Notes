@@ -1,0 +1,8 @@
+* Tools used:
+    - HashCalc
+    - CryptoForge
+    - BCTextEncoder
+
+* Disk Encryption using 
+    - VeraCrypt
+    - Cryptool

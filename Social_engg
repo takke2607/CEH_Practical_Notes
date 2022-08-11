@@ -1,0 +1,8 @@
+* Credential Harvesting :
+    Tool used : Social Engineering Toolkit(SET)
+    Options to be select : 1) Social-Engineering Attacks
+                           2) Website attack vector
+                           3) Credential harvester
+                           4) Site Cloner
+    -> Enter the loopback ip address of your machine 
+    -> Enter the site address to clone 

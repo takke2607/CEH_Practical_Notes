@@ -1,0 +1,28 @@
+* Utilities which can be used :
+    1. ping
+    2. tracert
+* Collect information about target website using "Firebug"
+* Win HTTrack website copier
+* Path analyzer pro for trace route of the packages
+* Start with metasploit
+    Commands : service postgresql status
+               open msfconsole
+               check msf db status : db_status
+               if no connection exist for DB exit msfconsole, enter command : msfdb init
+               service postgresql restart
+* NMAP scan from msfconsole:
+        Subnet scan :
+        nmap -Pn -sS -A -oX Test <IP/24>
+* Import latest nmap scan in msfconsole:
+        db_import "<name>" (for above eg -> db_import Test)
+        list down scanned hosts of nmap : hosts
+* Start nmap scan on a particular ip :
+        db_nmap -sS -A <IP>        
+* To get services of all actives machines in the subnet enter below command in msfconsole:
+    # services
+* To load SMB scanner enter below command in msfconsole:
+    # use scanner/smb/smb_version
+    enter below command to check which options are available:
+    # options
+    set RHOST
+    # set RHOST 10.10.10.1 or you can set whole list as 10.10.10.1-10

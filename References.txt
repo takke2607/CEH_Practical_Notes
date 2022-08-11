@@ -1,0 +1,23 @@
+https://diarium.usal.es/pmgallardo/2020/12/13/tools-for-ceh-practical/
+https://book.thegurusec.com/certifications/certified-ethical-hacker-practical
+https://github.com/CyberSecurityUP/Guide-CEH-Practical-Master
+https://gtfobins.github.io/gtfobins/python/#reverse-shell
+https://askmitra.com/ceh-practical-notes-and-tips/
+
+
+https://tryhackme.com/room/ultratech1
+ToolsRus 
+
+* Nmap: https://www.stationx.net/nmap-cheat-sheet/
+
+* Wordpress : https://www.poftut.com/how-to-scan-wordpress-sites-with-wpscan-tutorial-for-security-vulnerabilities/
+
+* Sqlmap: https://www.hackingarticles.in/database-penetration-testing-using-sqlmap-part-1/
+
+* Hydra: https://securitytutorials.co.uk/brute-forcing-passwords-with-thc-hydra/
+
+* John the ripper: https://linuxconfig.org/password-cracking-with-john-the-ripper-on-linux
+
+* Wireshark: https://unit42.paloaltonetworks.com/using-wireshark-display-filter-expressions/
+
+* 

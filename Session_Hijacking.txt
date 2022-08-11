@@ -1,0 +1,14 @@
+* Session Hijacking using Zed Attack Proxy(ZAP) :
+    - Open Chrome in victim's machine and click settings from context menu.
+    - Scroll down and click on "Advance"
+    - In system , open proxy settings.
+    - In internet properties pop-up, go to connections tab and click on "LAN settings". 
+    - Check on "Use Proxy server for your lan". In Address field type the attacker's machine IP and port 8080. click on OK.
+    - In attackers machine open Owasp ZAP.
+    - In owasp zap main window click on "+" at the right side and then click on the "break".
+    - Once break tab is added , setup the zap to work as a proxy. To enable this clik on "Tool" tab on the top and click on "Options"
+    - When the options window appears, select "local proxies" and in the address field type the ip address of the machine on which the ZAP is running. Click ok.
+    - After the above steps, click on the green icon aboove break tab , this will Set the break oon all requests and response, similar to intercept on/off in burp suite.
+    - On victim machine visit any url and you will see the request is being intercepted at the attackers's machine. Now modify the request at attackers side and you will see the victim is being redirected to the url which was modifies by the attacker.
+
+The above attack is just an understanding of how proxies work. 

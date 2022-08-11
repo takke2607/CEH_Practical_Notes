@@ -1,0 +1,29 @@
+* Perform Web Server Reconnaisance with Skipfish:
+    Command:
+        # skipfish -o /root/test -S /usr/share/skipfish/dictionaries/complete.wl <url>
+    The result will be stored in a webpage format at the location provided in "-o" flag. For above eg. it will be stored in /root/test
+
+* Footprinting webserver using httprecon:
+    - Open httprecon and enter target ip and click on analyse.
+    - This will dump the server details.
+
+* Footprinting server using ID Serve:
+
+* Cracking FTP creds using dictionary attack:
+    - run nmap on port 21 to confirm ftp port is open.
+    - Confirm if ftp server is hosted using below command:
+        # ftp <target_ip>
+        You will be prompted to enter creds , which implies that the FTP server is hosted.
+    - Try entering a random creds , as thiw will be incorrect you will recieve the login failed message.
+    - To brute force open hydra and type below command:
+        # hydra -L <path/to/username/list> -P /path/to/password/list ftp://<ip>
+
+* Uniscan Web server fingerprinting in Kali Linux
+    - To scan the webserver run below command:
+        # uniscan -u http://<ip> -q 
+    - To enable checks for file , robots.txt etc use -w and -e flag 
+        # uniscan -u http://<ip> -we
+    - To do a dynamic scan run below command
+        # niscan -u http://<ip> -d
+    The result for the scan are stored in /usr/share/uniscan/report/index.html
+    

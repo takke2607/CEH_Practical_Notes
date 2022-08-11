@@ -1,0 +1,34 @@
+* Footprinting and Recon:
+    - ping 
+    - Firebug (Browser extension to check headers , request, response etc)
+    - HTTrack (Windows & Linux tool to mirror the website)
+    - Path Analyzer (To get the DNS details and check how many hops away the target is)
+    - Metasploit (To scan the entire subnet and check how many machine are up and what OS are they running on. Refer Footprinting_&_Recon.txt for details)
+            # services
+
+* Enumeration:
+    - Global Network Inventory or gni (To get the NetBios details of the host)
+    - Advance IP scanner
+    - SuperScan
+    - Hyena (Enumerate Resources on local machine)
+    - Softperfect (To get the details of hidden shared folders and ip address)
+    - Adexplorer (LDAP enumeration)
+    - enum4linux (to get the password , group policies etc of the target)
+
+* Vulneribility Analysis:
+    - Nessus
+    - Nikto
+
+* Hacking Web Servers:
+    - Skipfish (Linux tool to scan the server for vulns)
+    - httprecon (Used for server fingerprinting)
+    - IDserve (For server banner grabbing)
+    - hydra (for bruteforce)
+    - uniscan (get web directories and other other vulns details)
+
+* Hacking Web application:
+    - wpscan
+    - Metasploit
+    - Vega
+    - Acunetix
+    

